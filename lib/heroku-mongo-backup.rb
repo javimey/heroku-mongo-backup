@@ -117,6 +117,9 @@ module HerokuMongoBackup
       if bucket.nil?
         bucket          = ENV['S3_BUCKET']
       end
+      if bucket.nil?
+        bucket          = ENV['S3_BUCKET_NAME']
+      end
 
       dir_name          = ENV['S3_BACKUP_DIR']
       if dir_name.nil?
